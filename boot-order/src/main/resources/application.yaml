@@ -1,0 +1,12 @@
+server:
+  port: 8283
+spring:
+  application:
+    name: boot-order
+
+# Eureka 配置，服务注册到哪里
+eureka:
+  client:
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8289/eureka/

@@ -1,0 +1,15 @@
+server:
+  port: 8289
+spring:
+  application:
+    name: cloud-Eureka
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    fetch-registry: false # false，表示自己为服务注册中心
+    register-with-eureka: false # 为false，表示是否在Eureka服务注册中心注册自己
+    service-url:
+      defaultZone: http://localhost:8289/eureka/
+    healthcheck:
+      enabled: true
