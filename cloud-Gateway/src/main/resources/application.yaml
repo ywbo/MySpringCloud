@@ -1,0 +1,32 @@
+server:
+  port: 8292
+spring:
+  application:
+    name: cloud-Gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lowerCaseServiceId: true
+      routes:
+        - id: boot-account
+          uri: lb://boot-account
+          predicates:
+            - Path: /account/**
+
+        - id: boot-order
+          uri: lb://boot-order
+          predicates:
+            - Path: /order/**
+
+
+
+# Eureka 配置
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8289/eureka/

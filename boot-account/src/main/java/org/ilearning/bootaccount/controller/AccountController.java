@@ -2,6 +2,7 @@ package org.ilearning.bootaccount.controller;
 
 import org.ilearning.bootaccount.model.User;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author 2024-07-17
  */
 @RestController
+@RequestMapping("/account")
 public class AccountController {
 
     @GetMapping("/list")
